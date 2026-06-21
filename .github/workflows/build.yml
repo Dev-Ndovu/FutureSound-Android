@@ -24,6 +24,9 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build Debug APK
+    - name: Set up Java Environment Variable
+      run: echo "JAVA_HOME=$JAVA_HOME_21_X64" >> $GITHUB_ENV
+
       run: ./gradlew assembleDebug
 
     - name: Upload APK Artifact
